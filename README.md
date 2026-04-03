@@ -37,7 +37,7 @@ git clone https://github.com/your-org/pdf-merger.git
 cd pdf-merger
 
 # 2. Open the tool in your browser
-open pdf-merger.html
+open index.html
 # or just double-click the file in your file explorer
 ```
 
@@ -56,12 +56,12 @@ That's it. The tool runs entirely in the browser.
 
 ```
 pdf-merger/
-├── pdf-merger.html     # The entire application (HTML + CSS + JS in one file)
+├── index.html     # The entire application (HTML + CSS + JS in one file)
 ├── CONTRIBUTING.md     # This file
 └── README.md           # User-facing documentation
 ```
 
-The project is intentionally a **single self-contained file**. All styles and scripts live inside `pdf-merger.html` to keep distribution simple — users only need to share or download one file.
+The project is intentionally a **single self-contained file**. All styles and scripts live inside `index.html` to keep distribution simple — users only need to share or download one file.
 
 ---
 
@@ -75,7 +75,7 @@ The project is intentionally a **single self-contained file**. All styles and sc
 | 4. Merging | Pages are copied from both documents into a new blank `PDFDocument` using `copyPages()` and `addPage()`. |
 | 5. Download | The merged document is serialized to bytes with `save()`, wrapped in a `Blob`, and offered as a download via a temporary object URL. |
 
-Key functions in `pdf-merger.html`:
+Key functions in `index.html`:
 
 ```
 mergePDFs()      — orchestrates the full merge flow
@@ -91,7 +91,7 @@ clearSlot()      — resets a file slot
 
 ### Editing styles
 
-All CSS lives in the `<style>` block at the top of `pdf-merger.html`. CSS custom properties (variables) are defined under `:root` — prefer changing those over scattered hex values.
+All CSS lives in the `<style>` block at the top of `index.html`. CSS custom properties (variables) are defined under `:root` — prefer changing those over scattered hex values.
 
 ```css
 :root {
@@ -126,7 +126,7 @@ Check available versions at [cdnjs.com/libraries/pdf-lib](https://cdnjs.cloudfla
 
 ### Code style
 
-- Keep everything in the single `pdf-merger.html` file.
+- Keep everything in the single `index.html` file.
 - Use `const` and `let` — no `var`.
 - Prefer `async/await` over raw Promise chains.
 - Avoid adding external dependencies beyond `pdf-lib`.
